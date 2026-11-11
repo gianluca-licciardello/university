@@ -1,0 +1,76 @@
+<phyphox version="1.14">
+    <title>Virtual Coach IMU</title>
+    <category>Virtual Coach</category>
+    <description>
+        Registra accelerometro (con gravità) e giroscopio in contemporanea.
+        Attiva "Enable remote access" dal menu (⋮) per lo streaming WiFi.
+        Esperimento creato per il progetto Virtual Coach — DSIM UniMiB.
+    </description>
+    <icon format="string">VC</icon>
+
+    <!-- Buffers for accelerometer -->
+    <data-containers>
+        <container size="0">accX</container>
+        <container size="0">accY</container>
+        <container size="0">accZ</container>
+        <container size="0">acc_time</container>
+        <!-- Buffers for gyroscope -->
+        <container size="0">gyrX</container>
+        <container size="0">gyrY</container>
+        <container size="0">gyrZ</container>
+        <container size="0">gyr_time</container>
+    </data-containers>
+
+    <!-- Sensor inputs -->
+    <input>
+        <sensor type="accelerometer" rate="50">
+            <output component="x">accX</output>
+            <output component="y">accY</output>
+            <output component="z">accZ</output>
+            <output component="t">acc_time</output>
+        </sensor>
+        <sensor type="gyroscope" rate="50">
+            <output component="x">gyrX</output>
+            <output component="y">gyrY</output>
+            <output component="z">gyrZ</output>
+            <output component="t">gyr_time</output>
+        </sensor>
+    </input>
+
+    <!-- Views -->
+    <views>
+        <view label="Accelerometro">
+            <graph label="Accelerazione (m/s²)" labelX="t (s)" labelY="a (m/s²)"
+                   partialUpdate="true" style="lines">
+                <input axis="x">acc_time</input>
+                <input axis="y">accX</input>
+                <input axis="y">accY</input>
+                <input axis="y">accZ</input>
+            </graph>
+        </view>
+        <view label="Giroscopio">
+            <graph label="Velocità angolare (rad/s)" labelX="t (s)" labelY="ω (rad/s)"
+                   partialUpdate="true" style="lines">
+                <input axis="x">gyr_time</input>
+                <input axis="y">gyrX</input>
+                <input axis="y">gyrY</input>
+                <input axis="y">gyrZ</input>
+            </graph>
+        </view>
+    </views>
+
+    <export>
+        <set name="Accelerometro">
+            <data name="t (s)">acc_time</data>
+            <data name="ax (m/s²)">accX</data>
+            <data name="ay (m/s²)">accY</data>
+            <data name="az (m/s²)">accZ</data>
+        </set>
+        <set name="Giroscopio">
+            <data name="t (s)">gyr_time</data>
+            <data name="gx (rad/s)">gyrX</data>
+            <data name="gy (rad/s)">gyrY</data>
+            <data name="gz (rad/s)">gyrZ</data>
+        </set>
+    </export>
+</phyphox>

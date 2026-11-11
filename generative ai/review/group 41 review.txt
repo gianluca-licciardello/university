@@ -1,0 +1,41 @@
+﻿1. Describe the problem the app is trying to solve in max 3 sentences. What problem does the app solve, how (solution), and for whom (user)?
+
+
+The workflow of students and academic researchers requires them to constantly acquire, process, and create complex information scattered across highly heterogeneous landscapes. The app aims at enriching documents with metadata and extracting topics to facilitate organization of the information, its retrieval and interconnection between topics from different areas.
+
+
+2. Rate the clarity of each section and identify gaps:
+
+
+* Users&Goals: Are the target users and their workflows clearly defined?
+The section identifies clearly both users and their workflows. The app aims to assist students and research teams in working with heterogeneous knowledge.
+
+
+* Problem Definition: Is the core challenge well-articulated and specific?
+The problem is definitely well-articulated. Furthermore, this section is supported by a previous one “Data” that highlights five features of the problem: Granularity, Connections, Completeness, Context and Heterogeneity.
+
+
+* Solution Concept: Is the high-level approach understandable without deep technical knowledge? The high-level approach is clearly shown by the five points listed: Understand, Connect, Retrieve, Generate, Surface. They explain in detail which aspect of the problem they address.
+
+
+* Technical Approach: Are the main technical challenges clearly defined?
+Technical challenges are absolutely clear:
+* Hybrid retrieval optimization needs testing different embedding models and chunking strategies.
+* Multi-format ingestion and enrichment require several techniques to ensure consistent quality and completeness.
+* Context-aware proactive surfacing has to use a reliable recommendation engine.
+        Also in the section “Appendix” some technical aspects are mentioned.
+
+
+3. Does the use of generative AI make sense in the proposed project?
+
+
+For sure the use of Generative AI is essential for the success of the project. Several tools and techniques are necessary for an effective use of the application since its core values lie in understanding, retrieving, connecting, and generating knowledge from heterogeneous academic material.
+
+
+4. How could this project be strengthened? (pointers and references are welcome, even without concrete proposals - e.g.relevant papers, GitHub repositories, or existing products
+
+
+Here we have some critical observations that would make the project presentation more clear:
+- Properly formatted citations for academic writing: mentioned but no clear details.
+- No mention of how any of the metrics will be conducted. Usefulness of generated outputs is a qualitative metric, how will it be evaluated? How will precision and recall be evaluated?
+- How will models be trained? Is there going to be a ground truth subset? If so, how will it be generated?
